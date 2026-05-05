@@ -1,0 +1,17 @@
+# spatial distribution of Seattle airbnb listing by stay type (2021-2023)
+# exporting to CSV for ArcGIS spatial analysis 
+write.csv(lc,"gis_listing_all.csv",row.names = FALSE)
+
+# spatial distribution of Seattle airbnb short-term listing by compliance & pricing heatmap (2021-2023)
+# exporting to CSV for ArcGIS spatial analysis 
+write.csv(st,"gis_short_term_airbnb.csv",row.names = FALSE)
+
+# spatial distribution of Seattle airbnb long-term listing by host type & pricing heatmap (2021-2023)
+# adding monthly rate column 
+gis_long_term <- lt %>%
+mutate(Monthly_rate = price * 30) 
+
+saveRDS(gis_long_term,"gis_long_term.rds")
+
+# exporting to CSV for ArcGIS spatial analysis 
+write.csv(gis_long_term,"gis_long_term_airbnb.csv",row.names = FALSE)
