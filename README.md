@@ -25,7 +25,7 @@ With 78.9% of stay types being "short-term" and 87.2% of room types being "Entir
 <img width="495" alt="stay_type_distribution" src="https://github.com/user-attachments/assets/4b15795b-31b2-4544-b396-b28f476355d3" />
 
 
-<img width="500" alt="room_type_distribution" src="https://github.com/user-attachments/assets/9d03f2e7-332e-40f8-a6f4-47eff7274164" />
+<img width="503" alt="room_type_distribution" src="https://github.com/user-attachments/assets/9d03f2e7-332e-40f8-a6f4-47eff7274164" />
 
 
 Interestingly, the top neighbourhoods for Airbnb stays, both overall and across stay types, are concentrated in ***Other Neighbourhoods***, ***Capitol Hill***, ***Downtown***, and ***Central Area***. Among these, ***Downtown***, ***Capitol Hill***, and ***Central Area*** together account for around 30% of total stays and are located in Seattle’s urban core, which functions as the city’s primary tourism and business hub. By contrast, ***Other Neighbourhoods*** account for approximately 21% of total stays and consist of numerous residential districts located farther from Seattle’s urban core, representing a segment focused on local accommodation.
