@@ -1,8 +1,30 @@
 # Seattle Airbnb Listings Analysis (2021-2023)
 Exploratory and spatial analysis of Seattle Airbnb short-term and long-term rental patterns (2021–2023) using R and ArcGIS.
 
-## Why This Project 
+### Why This Project 
 Seattle was the first city I arrived in when I came to the United States for school. I also lived in Bellevue for two months in an apartment booked through Airbnb, where the entire unit was managed by Zeus, a professional property management company. During that stay, I noticed that the monthly rate was only about $300 higher than comparable units in the same building. When I booked the accommodation, I also compared the unit I stayed in with similar long-term listings offered by individual residential hosts and found that those residential options were often priced even higher. Given that Seattle is both a major tourism destination and a hub for large corporations, demand for both short-term and long-term rentals is likely to be strong. This inspired me to dive into Airbnb rental patterns in Seattle for my second project.
+
+### Technical Highlights 
+
+* Wrangled raw Airbnb listing data by removing hotel rooms, inactive properties, and missing values, retaining an analytical sample of 4,891 active listings from 2021 to 2023.
+
+* Structured listings into Short-Term (30 nights or fewer) and Long-Term (>30 nights) datasets based on the Seattle Municipal Short-Term Rental Ordinance threshold.
+  
+* Engineered custom operator features: classified short-term listings by municipal compliance status (legal, violation, unlicensed) and categorized long-term operators as corporate vs. residential by identifying professional property management companies (e.g., Blueground, Zeus).
+
+* Estimated listing turnover rates using the Inside Airbnb "San Francisco Model", building two segmented multiple linear regression models (R² = 0.722 for short-term and R² = 0.830 for long-term) validated through VIF multicollinearity tests and robust standard errors.
+
+* Created spatial maps and heatmaps in ArcGIS to examine the overall distribution of stay types, short-term compliance and price patterns, and long-term host types and monthly rate heatmaps across Seattle's neighbourhoods.
+
+### Key Findings
+
+* **STR Licensing Compliance:** Approximately 86% of short-term listings comply with Seattle's two-unit licensing rules. Statistical modeling and EDA show that compliance status has little impact on nightly pricing or turnover, indicating that non-compliant operators do not meaningfully distort market rates.
+
+* **Corporate vs. Residential Hosts:** In the long-term market, corporate operators offer standardized monthly rates that rarely exceed $7,500. In contrast, residential listings show a much wider price spread, featuring larger homes or scenic neighborhood settings with occasional high-end outliers crossing $10,000 per month.
+  
+* **The Value of Location:** Location drives the two markets differently. Short-term visitors pay a premium for Downtown convenience, while long-term monthly rates are driven across the city by living space, scenic views, and distinctive neighborhood settings rather than downtown proximity alone.
+
+--- 
 
 ## Data
 The dataset **Listings** was downloaded from Kaggle: [Inside AirBnB - USA](https://www.kaggle.com/datasets/konradb/inside-airbnb-usa) (originally sourced from Inside Airbnb Seattle). It was created on July 2, 2023, and retrieved in January 2026. It is currently unavailable on Inside Airbnb due to seasonal dataset updates.
