@@ -22,7 +22,8 @@ Seattle was the first city I arrived in when I came to the United States for sch
 
 * **Corporate vs. Residential Hosts:** In the long-term market, corporate operators offer standardized monthly rates that rarely exceed $7,500. In contrast, residential listings show a much wider price spread, featuring larger homes or scenic neighborhood settings with occasional high-end outliers crossing $10,000 per month.
   
-* **The Value of Location:** Location drives the two markets differently. Short-term visitors pay a premium for Downtown convenience, while long-term monthly rates are driven across the city by living space, scenic views, and distinctive neighborhood settings rather than downtown proximity alone.
+* **Turnover & Location Patterns:** Econometric modeling reveals that turnover operates on completely different drivers across the two markets. In the short-term market, booking frequency is heavily driven by price and downtown convenience. In the long-term market, neighborhood location and price play only limited roles in turnover, which is instead driven primarily by host type, with residential listings turning over significantly faster than corporate-managed properties.
+
 
 --- 
 
