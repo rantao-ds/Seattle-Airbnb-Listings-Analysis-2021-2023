@@ -14,7 +14,7 @@ Seattle was the first city I arrived in when I came to the United States for sch
 
 * Estimated listing turnover rates using the Inside Airbnb "San Francisco Model", building two segmented multiple linear regression models (R² = 0.722 for short-term and R² = 0.830 for long-term) validated through VIF multicollinearity tests and robust standard errors.
 
-* Created spatial maps and heatmaps in ArcGIS to examine the overall distribution of stay types, short-term compliance and price patterns, and long-term host types and monthly rate heatmaps across Seattle's neighbourhoods.
+* Created spatial maps and heatmaps in ArcGIS to examine the overall distribution of stay types, short-term compliance and price patterns, and long-term host types and monthly rate heatmaps across Seattle's neighborhoods.
 
 ### Key Findings
 
@@ -30,7 +30,7 @@ Seattle was the first city I arrived in when I came to the United States for sch
 ## Data
 The dataset **Listings** was downloaded from Kaggle: [Inside AirBnB - USA](https://www.kaggle.com/datasets/konradb/inside-airbnb-usa) (originally sourced from Inside Airbnb Seattle). It was created on July 2, 2023, and retrieved in January 2026. It is currently unavailable on Inside Airbnb due to seasonal dataset updates.
 
-The dataset originally contained 5,113 listings and 19 variables describing listing characteristics, including price, location, neighbourhood, host information, and reviews. After removing hotel rooms, inactive listings, missing and zero values, and filtering listings by last review date to the most recent three years (2021, 2022, and 2023), 4,891 observations remained for exploration and analysis. To better distinguish between short-term and long-term rentals, a new variable "stay_type" was created and the data was then divided into two separate datasets.
+The dataset originally contained 5,113 listings and 19 variables describing listing characteristics, including price, location, neighborhood, host information, and reviews. After removing hotel rooms, inactive listings, missing and zero values, and filtering listings by last review date to the most recent three years (2021, 2022, and 2023), 4,891 observations remained for exploration and analysis. To better distinguish between short-term and long-term rentals, a new variable "stay_type" was created and the data was then divided into two separate datasets.
 
 The **Short-Term** dataset focused on Seattle's short-term rental regulation, which requires operators running short-term rentals to obtain a license valid for up to two units. Of those two units, one must be the operator's primary residence. In other words, Seattle enforces strict regulations on the short-term rental market, allowing only up to two units under one license to prevent commercialization. To capture this, I created a variable "compliance" to flag licenses associated with more than two units as "violation", those with two or fewer listings as "legal", and listings with no license as "no_license". 
 
@@ -51,9 +51,9 @@ With 78.9% of stay types being "short-term" and 87.2% of room types being "Entir
 <img width="503" alt="room_type_distribution" src="https://github.com/user-attachments/assets/9d03f2e7-332e-40f8-a6f4-47eff7274164" />
 
 
-Interestingly, the top neighbourhoods for Airbnb stays, both overall and across stay types, are concentrated in ***Other Neighbourhoods***, ***Capitol Hill***, ***Downtown***, and ***Central Area***. Among these, ***Downtown***, ***Capitol Hill***, and ***Central Area*** together account for around 30% of total stays and are located in Seattle’s urban core, which functions as the city’s primary tourism and business hub. By contrast, ***Other Neighbourhoods*** accounts for approximately 21% of total stays and consists of numerous residential districts located farther from Seattle’s urban core, representing a segment focused on local accommodation.
+Interestingly, the top neighborhoods for Airbnb stays, both overall and across stay types, are concentrated in ***Other Neighborhoods***, ***Capitol Hill***, ***Downtown***, and ***Central Area***. Among these, ***Downtown***, ***Capitol Hill***, and ***Central Area*** together account for around 30% of total stays and are located in Seattle’s urban core, which functions as the city’s primary tourism and business hub. By contrast, ***Other Neighborhoods*** accounts for approximately 21% of total stays and consists of numerous residential districts located farther from Seattle’s urban core, representing a segment focused on local accommodation.
 
-Apart from these top stay neighbourhoods, ***West Seattle*** accounts for approximately 8.1% of stays among the top five short-term neighbourhoods, whereas the ***University District*** accounts for 7% of stays among the top five long-term neighbourhoods. These two neighbourhoods represent fundamentally different market segments: ***West Seattle*** functions as an alternative to the urban core with a more suburban character, while the concentration of student populations in the ***University District*** corresponds to a higher share of long-term listings.
+Apart from these top stay neighborhoods, ***West Seattle*** accounts for approximately 8.1% of stays among the top five short-term neighborhoods, whereas the ***University District*** accounts for 7% of stays among the top five long-term neighborhoods. These two neighborhoods represent fundamentally different market segments: ***West Seattle*** functions as an alternative to the urban core with a more suburban character, while the concentration of student populations in the ***University District*** corresponds to a higher share of long-term listings.
 
 
 <img width="480" alt="top_5_neighborhood" src="https://github.com/user-attachments/assets/1ed867e9-735f-4ca1-8686-c1695d424a71" />
@@ -66,7 +66,7 @@ Apart from these top stay neighbourhoods, ***West Seattle*** accounts for approx
 ### Short-Term
 
 
-With 86% of stays classified as legal, most short-term entire home/apartment listings appear to hold a valid license and comply with the regulation limiting each license to no more than two listings. Indeed, the structure and distribution of the top five short-term neighbourhoods with the highest share of legal listings are identical to those of the overall top five short-term neighbourhoods, largely because legal listings make up the majority of the short-term market. Similarly, the top neighbourhoods with the largest share of violation listings also closely mirror the overall short-term distribution, suggesting that violation listings are not concentrated in a single part of Seattle but are distributed across neighbourhoods. One exception is ***Queen Anne***, which appears among the top neighbourhoods for violation listings, implying that violation listings may be relatively more concentrated in this neighbourhood.
+With 86% of stays classified as legal, most short-term entire home/apartment listings appear to hold a valid license and comply with the regulation limiting each license to no more than two listings. Indeed, the structure and distribution of the top five short-term neighborhoods with the highest share of legal listings are identical to those of the overall top five short-term neighborhoods, largely because legal listings make up the majority of the short-term market. Similarly, the top neighborhoods with the largest share of violation listings also closely mirror the overall short-term distribution, suggesting that violation listings are not concentrated in a single part of Seattle but are distributed across neighborhoods. One exception is ***Queen Anne***, which appears among the top neighborhoods for violation listings, implying that violation listings may be relatively more concentrated in this neighborhood.
 
 
 <img width="500" alt="st_compliance_distribution" src="https://github.com/user-attachments/assets/5197dede-d710-4037-896a-090fed324ca2" />
@@ -87,10 +87,10 @@ As shown in the boxplot, both groups have very similar central distributions, wi
 <img width="700" alt="boxplot_compliance_type" src="https://github.com/user-attachments/assets/4eba5ce5-dab1-4a01-b9a3-a3c7a5ddc6a6" />
 
 
-Comparing pricing across the top five short-term entire home/apartment neighbourhoods, median nightly rates in ***Other Neighbourhoods***, ***West Seattle***, ***Capitol Hill***, and ***Central Area*** are closely clustered between $129 and $136. ***Downtown*** commands the highest median rate at $157 along with the least right-skewness (+$19). By contrast, ***Other Neighbourhoods*** has the lowest median rate at $129 but the strongest right-skewness (+$40), followed by ***West Seattle*** (+$32), ***Capitol Hill*** (+$31), and ***Central Area*** (+$22).
+Comparing pricing across the top five short-term entire home/apartment neighborhoods, median nightly rates in ***Other Neighborhoods***, ***West Seattle***, ***Capitol Hill***, and ***Central Area*** are closely clustered between $129 and $136. ***Downtown*** commands the highest median rate at $157 along with the least right-skewness (+$19). By contrast, ***Other Neighborhoods*** has the lowest median rate at $129 but the strongest right-skewness (+$40), followed by ***West Seattle*** (+$32), ***Capitol Hill*** (+$31), and ***Central Area*** (+$22).
 
 
-Overall, the boxplots show that all five neighbourhoods share similar central pricing structures, IQRs, and whisker lengths. While ***Downtown*** sits at a slightly higher price point, the main differences lie in the outlier tails. ***Central Area*** and ***West Seattle*** have relatively contained spreads, with all outliers staying below $400 per night. ***Downtown*** and ***Capitol Hill*** share similar patterns, each showing a single extreme outlier above $500 per night with sparse points below that mark. Meanwhile, ***Other Neighbourhoods*** shows the densest cluster of premium outliers, with several properties extending well beyond $500 per night.
+Overall, the boxplots show that all five neighborhoods share similar central pricing structures, IQRs, and whisker lengths. While ***Downtown*** sits at a slightly higher price point, the main differences lie in the outlier tails. ***Central Area*** and ***West Seattle*** have relatively contained spreads, with all outliers staying below $400 per night. ***Downtown*** and ***Capitol Hill*** share similar patterns, each showing a single extreme outlier above $500 per night with sparse points below that mark. Meanwhile, ***Other Neighborhoods*** shows the densest cluster of premium outliers, with several properties extending well beyond $500 per night.
 
 
 <img width="350" alt="st_nb_cr" src="https://github.com/user-attachments/assets/871803d2-8edf-4622-9d4a-ad1331ee1c1a" />
@@ -103,7 +103,7 @@ Overall, the boxplots show that all five neighbourhoods share similar central pr
 
 ### Long-Term
 
-With 76.2% of total long-term stays operated by residential hosts and 23.8% managed by professional companies such as Blueground, Seattle’s long-term entire home/apartment Airbnb market is dominated by residential host listings. Interestingly, listings operated by professional management companies are concentrated in and around Seattle’s urban core, including ***Downtown***, ***Capitol Hill***, ***Cascade***, ***Interbay***, and ***Central Area***. In contrast, listings operated by residential hosts are more concentrated in residential districts, such as ***Other Neighbourhoods***, ***University District***, and ***West Seattle***, while also appearing in urban areas, including ***Capitol Hill***, ***Downtown***, and ***Queen Anne***.
+With 76.2% of total long-term stays operated by residential hosts and 23.8% managed by professional companies such as Blueground, Seattle’s long-term entire home/apartment Airbnb market is dominated by residential host listings. Interestingly, listings operated by professional management companies are concentrated in and around Seattle’s urban core, including ***Downtown***, ***Capitol Hill***, ***Cascade***, ***Interbay***, and ***Central Area***. In contrast, listings operated by residential hosts are more concentrated in residential districts, such as ***Other Neighborhoods***, ***University District***, and ***West Seattle***, while also appearing in urban areas, including ***Capitol Hill***, ***Downtown***, and ***Queen Anne***.
 
 
 <img width="500" alt="prop_lt_host_type" src="https://github.com/user-attachments/assets/5b32a8e1-605b-4d33-a761-4357da7f8ae3" />
@@ -125,10 +125,10 @@ The boxplot clearly reflects this pattern. While both groups share very similar 
 
 
 
-Among the top long-term stay neighbourhoods, ***University District*** has the lowest median and mean monthly rates, with only minor right-skewness (+$404). By contrast, ***Central Area*** records the highest median and mean monthly rates and the strongest right-skewness (+$1,377), followed by ***Capitol Hill*** (+$1,262), ***Other Neighbourhoods*** (+$928), and ***Downtown*** (+$631). 
+Among the top long-term stay neighborhoods, ***University District*** has the lowest median and mean monthly rates, with only minor right-skewness (+$404). By contrast, ***Central Area*** records the highest median and mean monthly rates and the strongest right-skewness (+$1,377), followed by ***Capitol Hill*** (+$1,262), ***Other Neighborhoods*** (+$928), and ***Downtown*** (+$631). 
 
 
-Compared to the short-term market, where boxplots are fairly uniform across neighbourhoods, long-term boxplots show much greater variation in their spreads, whisker lengths, and outlier patterns. First, ***Capitol Hill***, ***Downtown***, and the ***University District*** show relatively few extreme outliers despite differences in their medians and IQRs, pointing to more stable pricing structures. Second, while ***Central Area*** appeared stable in the short-term market, it displays an unusual pattern in the long-term market: it not only has the highest median monthly rate and the widest IQR, but its upper whisker extends all the way to the $10,000 chart limit. Finally, while ***Other Neighbourhoods*** showed a dense cluster of premium outliers in the short-term market, its long-term market displays only a modest cluster of outliers below $10,000 per month.
+Compared to the short-term market, where boxplots are fairly uniform across neighborhoods, long-term boxplots show much greater variation in their spreads, whisker lengths, and outlier patterns. First, ***Capitol Hill***, ***Downtown***, and the ***University District*** show relatively few extreme outliers despite differences in their medians and IQRs, pointing to more stable pricing structures. Second, while ***Central Area*** appeared stable in the short-term market, it displays an unusual pattern in the long-term market: it not only has the highest median monthly rate and the widest IQR, but its upper whisker extends all the way to the $10,000 chart limit. Finally, while ***Other Neighborhoods*** showed a dense cluster of premium outliers in the short-term market, its long-term market displays only a modest cluster of outliers below $10,000 per month.
 
 
 <img width="350" alt="lt_nb_cr" src="https://github.com/user-attachments/assets/9390aed8-8945-4141-83b6-b44dec94087c" />
@@ -142,7 +142,7 @@ Compared to the short-term market, where boxplots are fairly uniform across neig
 ### Monthly Rate Comparison: Short-Term vs. Long-Term
 
 
-The final part of the EDA makes a simple and more practical comparison between short-term and long-term monthly rates for entire home/apartment listings. As shown in the grouped bar chart, the estimated monthly cost of staying in a short-term listing is higher than for a long-term listing across all four neighbourhoods. However, this gap may not be as large in practice as the chart suggests, because short-term hosts often offer discounts for longer stays, especially for bookings around two to four weeks. Based on hosts’ own discussions and reported experiences, discounts of around 10% to 30% are not uncommon when guests communicate directly with hosts about longer stays. I would still not conclude that staying longer in a short-term listing will necessarily become cheaper than renting a long-term unit, since the final price depends on booking timing, the host’s decision, and the specific discount offered. Even so, the chart suggests that the difference between short-term and long-term monthly pricing may be smaller than expected in some neighbourhoods. This is especially true in ***Central Area***, where the two monthly rates are nearly identical. Under these conditions, guests with stronger bargaining power may be more likely to secure relatively lower prices for longer stays in short-term accommodations.
+The final part of the EDA makes a simple and more practical comparison between short-term and long-term monthly rates for entire home/apartment listings. As shown in the grouped bar chart, the estimated monthly cost of staying in a short-term listing is higher than for a long-term listing across all four neighborhoods. However, this gap may not be as large in practice as the chart suggests, because short-term hosts often offer discounts for longer stays, especially for bookings around two to four weeks. Based on hosts’ own discussions and reported experiences, discounts of around 10% to 30% are not uncommon when guests communicate directly with hosts about longer stays. I would still not conclude that staying longer in a short-term listing will necessarily become cheaper than renting a long-term unit, since the final price depends on booking timing, the host’s decision, and the specific discount offered. Even so, the chart suggests that the difference between short-term and long-term monthly pricing may be smaller than expected in some neighborhoods. This is especially true in ***Central Area***, where the two monthly rates are nearly identical. Under these conditions, guests with stronger bargaining power may be more likely to secure relatively lower prices for longer stays in short-term accommodations.
 
 
 <img width="600" alt="monthly_rate_ltst_comparison" src="https://github.com/user-attachments/assets/c2c6077f-d25c-4235-961e-98102386dc3d" />
@@ -153,10 +153,10 @@ The final part of the EDA makes a simple and more practical comparison between s
 ### Summary
 
 
-Overall, pricing patterns differ substantially between long-term and short-term entire home/apartment listings, especially across neighbourhoods. For **long-term** listings, the logic of “location, location, location” does not appear to be strongly associated with pricing patterns. Specifically, ***Downtown***, Seattle’s urban core and primary destination for both tourism and business travel, presents a more stable pricing structure than both nearby urban neighbourhoods and more suburban districts, which tend to show more outliers. In addition, while corporate listings managed by professional companies have higher monthly rates than those operated by local residential hosts, they also exhibit fewer outliers and weaker right-skewness. This suggests that prime location alone may not be the central driver of long-term pricing. Instead, amenities, listing characteristics, and the local living environment may play a more important role.
+Overall, pricing patterns differ substantially between long-term and short-term entire home/apartment listings, especially across neighborhoods. For **long-term** listings, the logic of “location, location, location” does not appear to be strongly associated with pricing patterns. Specifically, ***Downtown***, Seattle’s urban core and primary destination for both tourism and business travel, presents a more stable pricing structure than both nearby urban neighborhoods and more suburban districts, which tend to show more outliers. In addition, while corporate listings managed by professional companies have higher monthly rates than those operated by local residential hosts, they also exhibit fewer outliers and weaker right-skewness. This suggests that prime location alone may not be the central driver of long-term pricing. Instead, amenities, listing characteristics, and the local living environment may play a more important role.
 
 
-For **short-term** listings, the logic of “location, location, location” appears to apply more clearly than it does in the long-term market. Unlike long-term pricing, where ***Downtown*** shows a more stable structure than surrounding neighbourhoods, higher-priced short-term listings can be found in both the urban core and suburban residential districts. This suggests that short-term pricing may reflect at least two different groups of customers. One group likely prioritizes prime location and especially values proximity to business districts, tourist destinations, and transit to maximize convenience during a brief stay. Another group may place greater value on amenities, neighbourhood character, and local experience, particularly if they are staying slightly longer or traveling by car. Under this pattern, higher short-term prices are not driven by location alone, but also by the appeal of distinctive neighbourhood settings and host-specific amenities. Additionally, legal and violation listings do not show clear differences in their central pricing patterns, suggesting that compliance status plays only a limited role in shaping short-term prices.
+For **short-term** listings, the logic of “location, location, location” appears to apply more clearly than it does in the long-term market. Unlike long-term pricing, where ***Downtown*** shows a more stable structure than surrounding neighborhoods, higher-priced short-term listings can be found in both the urban core and suburban residential districts. This suggests that short-term pricing may reflect at least two different groups of customers. One group likely prioritizes prime location and especially values proximity to business districts, tourist destinations, and transit to maximize convenience during a brief stay. Another group may place greater value on amenities, neighborhood character, and local experience, particularly if they are staying slightly longer or traveling by car. Under this pattern, higher short-term prices are not driven by location alone, but also by the appeal of distinctive neighborhood settings and host-specific amenities. Additionally, legal and violation listings do not show clear differences in their central pricing patterns, suggesting that compliance status plays only a limited role in shaping short-term prices.
 
 
 
@@ -165,7 +165,7 @@ For **short-term** listings, the logic of “location, location, location” app
 
 ### Objective
 
-In the previous section, the EDA explored how neighbourhoods and host types shape pricing patterns and market structure across short-term and long-term listings. In the modeling section, the analysis shifts toward the estimated turnover rate, which serves as a indicator for booking frequency, to examine which factors may influence listing activity. Given the limited listing-specific information available in the dataset, particularly details on rooms and amenities, price prediction models are likely to have limited explanatory power. Therefore, multiple linear regression is applied to examine the relationship between turnover rate and potential factors to better understand and articulate the market structure explored in the EDA.
+In the previous section, the EDA explored how neighborhoods and host types shape pricing patterns and market structure across short-term and long-term listings. In the modeling section, the analysis shifts toward the estimated turnover rate, which serves as a indicator for booking frequency, to examine which factors may influence listing activity. Given the limited listing-specific information available in the dataset, particularly details on rooms and amenities, price prediction models are likely to have limited explanatory power. Therefore, multiple linear regression is applied to examine the relationship between turnover rate and potential factors to better understand and articulate the market structure explored in the EDA.
 
 
 
@@ -177,18 +177,15 @@ According to Inside Airbnb, the “San Francisco Model” adopts 50% of monthly 
 
 - **Dependent Variables:**
 
-  short-term: est_tvr
-
-  long-term: est_tvr_con
-  
+  - **short-term:** `est_tvr`
+    
+  - **long-term:** `est_tvr_con`
 
 - **Independent Variables:**
 
+  - **short-term:** `compliance`, `price`, `neighbourhood_group`, `host_level`, `number_of_reviews`, `availability_365`, `year`, `minimum_nights`, `number_of_reviews_ltm`
 
-  short-term: compliance, price, neighbourhood_group, host_level, number_of_reviews, availability_365, year, minimum_nights, number_of_reviews_ltm
-
-
-  long-term: host_type, price, neighbourhood_group, host_level, number_of_reviews, availability_365, year, number_of_reviews_ltm
+  - **long-term:** `host_type`, `price`, `neighbourhood_group`, `host_level`, `number_of_reviews`, `availability_365`, `year`, `number_of_reviews_ltm`
 
 
 **1. Multiple Linear Regression**
@@ -223,7 +220,7 @@ The last step was to test for heteroskedasticity and use robust standard errors 
 <img width="600" alt="ST_MODELING" src="https://github.com/user-attachments/assets/2cdc5d16-ac14-465e-bb16-d38bd766add7" />
 
 
-This multiple linear regression model explains a substantial share of the variation in estimated turnover rate, with an R² of 0.722. Among the selected predictors, **price** is negatively associated with turnover rate, suggesting that higher-priced listings tend to book less frequently. Meanwhile, higher **minimum-night** requirements and greater **availability** are also associated with lower turnover. By contrast, both **number of reviews** and **number of reviews in the last 12 months** are strongly and positively associated with turnover rate, indicating that review activity is closely related to booking frequency. The positive coefficient on **year** also suggests that estimated turnover rate increased over time between 2021 and 2023. However, the model suggests that neither **compliance status** nor **host professional level** plays a major role in shaping estimated turnover rate. In terms of **neighbourhood group**, only a limited number of neighbourhoods show statistically significant differences, and all of these effects are negative. Overall, the model suggests that turnover rate is more strongly associated with listing-level activity measures, such as price and reviews, than with compliance status or broad neighbourhood location.
+This multiple linear regression model explains a substantial share of the variation in estimated turnover rate, with an R² of 0.722. Among the selected predictors, **price** is negatively associated with turnover rate, suggesting that higher-priced listings tend to book less frequently. Meanwhile, higher **minimum-night** requirements and greater **availability** are also associated with lower turnover. By contrast, both **number of reviews** and **number of reviews in the last 12 months** are strongly and positively associated with turnover rate, indicating that review activity is closely related to booking frequency. The positive coefficient on **year** also suggests that estimated turnover rate increased over time between 2021 and 2023. However, the model suggests that neither **compliance status** nor **host professional level** plays a major role in shaping estimated turnover rate. In terms of **neighborhood group**, only a limited number of neighborhoods show statistically significant differences, and all of these effects are negative. Overall, the model suggests that turnover rate is more strongly associated with listing-level activity measures, such as price and reviews, than with compliance status or broad neighborhood location.
 
 
 ***Long-Term***
@@ -234,7 +231,7 @@ This multiple linear regression model explains a substantial share of the variat
 
 
 
-This multiple linear regression model explains a substantial share of the variation in estimated turnover rate, with an R² of 0.830. Compared with corporate hosts, **residential hosts** show a strong and positive association with turnover rate, indicating that locally operated long-term listings may turn over more frequently than corporate-managed ones. In contrast to the short-term model, **price** has only a limited impact on turnover, even though pricing is a key factor in the short-term market. Similarly, **availability** and **year** appear to have only limited effects in the long-term model. However, both **number of reviews** and **number of reviews in the last 12 months** remain strongly and positively associated with turnover rate, highlighting the close relationship between review activity and listing turnover in both short-term and long-term listings. In terms of **neighbourhood group**, only one neighbourhood is statistically significant, and the effect is negative, which implies that neighbourhood location may play a more limited role in the long-term market once other listing characteristics are taken into account. While host **professional level** plays only a limited role in the short-term model, **professional hosts** show a positive and statistically significant association with estimated turnover rate in the long-term model.
+This multiple linear regression model explains a substantial share of the variation in estimated turnover rate, with an R² of 0.830. Compared with corporate hosts, **residential hosts** show a strong and positive association with turnover rate, indicating that locally operated long-term listings may turn over more frequently than corporate-managed ones. In contrast to the short-term model, **price** has only a limited impact on turnover, even though pricing is a key factor in the short-term market. Similarly, **availability** and **year** appear to have only limited effects in the long-term model. However, both **number of reviews** and **number of reviews in the last 12 months** remain strongly and positively associated with turnover rate, highlighting the close relationship between review activity and listing turnover in both short-term and long-term listings. In terms of **neighborhood group**, only one neighborhood is statistically significant, and the effect is negative, which implies that neighborhood location may play a more limited role in the long-term market once other listing characteristics are taken into account. While host **professional level** plays only a limited role in the short-term model, **professional hosts** show a positive and statistically significant association with estimated turnover rate in the long-term model.
 
 
 
@@ -290,7 +287,7 @@ Overall, the two multiple linear regression models indicate that review activity
 
 ## Spatial Analysis (ArcGIS)
 
-The spatial analysis explores how short-term and long-term listings are distributed across Seattle’s neighbourhoods. Specifically, it examines the spatial distribution of compliance status within short-term listings, host type within long-term listings, and separate pricing heatmaps for short-term and long-term listings.
+The spatial analysis explores how short-term and long-term listings are distributed across Seattle’s neighborhoods. Specifically, it examines the spatial distribution of compliance status within short-term listings, host type within long-term listings, and separate pricing heatmaps for short-term and long-term listings.
 
 All spatial visualizations were completed in ArcGIS Online based on datasets prepared during the EDA process, with all room types retained, including Entire home/apt, Private room, and Shared room. Since each listing in the original dataset contains latitude and longitude coordinates, the aggregated data could be directly imported into ArcGIS Online for spatial mapping.
 
@@ -302,7 +299,7 @@ All spatial visualizations were completed in ArcGIS Online based on datasets pre
 <img width="1000" alt="st_lt_overall_com" src="https://github.com/user-attachments/assets/ba9f7972-6c38-470d-98e4-ad9fa53f76ac" />
 
 
-As shown in the map, the red dots representing short-term listings are visibly denser and more widely distributed across Seattle’s neighbourhoods. In particular, they are more heavily concentrated in the northern neighbourhoods of Seattle, both within and around the urban core as well as in nearby neighbourhoods beyond it. The yellow dots representing long-term listings display a broadly similar distribution, with a stronger concentration in the urban core and the northern neighbourhoods of Seattle, but with visibly lower overall density.
+As shown in the map, the red dots representing short-term listings are visibly denser and more widely distributed across Seattle’s neighborhoods. In particular, they are more heavily concentrated in the northern neighborhoods of Seattle, both within and around the urban core as well as in nearby neighborhoods beyond it. The yellow dots representing long-term listings display a broadly similar distribution, with a stronger concentration in the urban core and the northern neighborhoods of Seattle, but with visibly lower overall density.
 
 
 ### Short-Term 
@@ -313,7 +310,7 @@ As shown in the map, the red dots representing short-term listings are visibly d
 <img width="1000" alt="st_compliance _com" src="https://github.com/user-attachments/assets/1d650880-eaf8-48da-ae78-a23e4146b356" />
 
 
-This compliance-status map highlights the spatial distribution of "violation" and "no_license" listings. With red point markers representing "violation" listings, the map shows that these listings are most heavily concentrated in the northern part of the Other Neighbourhoods group adjacent to the urban core, as well as in central Seattle, including Downtown, Capitol Hill, and Central Area. However, they are also distributed more broadly across Seattle’s neighbourhoods rather than being limited to those areas. With black point markers representing "no_license" listings, very few such listings are visible on the map, although a small cluster can be observed in Downtown, with a few additional points appearing around the edges of the mapped area. The map also shows that legal listings, represented by yellow dots, make up the majority and are widely distributed across Seattle’s neighbourhoods, consistent with the EDA findings.
+This compliance-status map highlights the spatial distribution of "violation" and "no_license" listings. With red point markers representing "violation" listings, the map shows that these listings are most heavily concentrated in the northern part of the Other Neighborhoods group adjacent to the urban core, as well as in central Seattle, including Downtown, Capitol Hill, and Central Area. However, they are also distributed more broadly across Seattle’s neighborhoods rather than being limited to those areas. With black point markers representing "no_license" listings, very few such listings are visible on the map, although a small cluster can be observed in Downtown, with a few additional points appearing around the edges of the mapped area. The map also shows that legal listings, represented by yellow dots, make up the majority and are widely distributed across Seattle’s neighborhoods, consistent with the EDA findings.
 
 
 **Distribution of Pricing**
@@ -323,7 +320,7 @@ This compliance-status map highlights the spatial distribution of "violation" an
 
 
 
-The pricing heatmap shows that the highest nightly rates are concentrated most heavily in Downtown, although high-priced listings can also be found around Seattle’s urban core, including Capitol Hill, Central Area, Queen Anne, Interbay, and the northern part of the Other Neighbourhoods group.
+The pricing heatmap shows that the highest nightly rates are concentrated most heavily in Downtown, although high-priced listings can also be found around Seattle’s urban core, including Capitol Hill, Central Area, Queen Anne, Interbay, and the northern part of the Other Neighborhoods group.
 
 
 ### Long-Term 
@@ -338,7 +335,7 @@ The pricing heatmap shows that the highest nightly rates are concentrated most h
 
 
 
-The map highlights the distribution of corporate listings managed by professional companies, represented by red house markers. As shown in the map, corporate listings are significantly concentrated in Seattle’s urban core, including Downtown, Capitol Hill, and Central Area, as well as in the northern part of the Other Neighbourhoods group adjacent to the urban core. With yellow dots representing residential listings, the map also shows that these listings are more broadly distributed across Seattle’s neighbourhoods, although small clusters can be observed in the University District and Capitol Hill.
+The map highlights the distribution of corporate listings managed by professional companies, represented by red house markers. As shown in the map, corporate listings are significantly concentrated in Seattle’s urban core, including Downtown, Capitol Hill, and Central Area, as well as in the northern part of the Other Neighborhoods group adjacent to the urban core. With yellow dots representing residential listings, the map also shows that these listings are more broadly distributed across Seattle’s neighborhoods, although small clusters can be observed in the University District and Capitol Hill.
 
 
 **Distribution of Pricing**
@@ -348,11 +345,13 @@ The map highlights the distribution of corporate listings managed by professiona
 
 
 
-This heatmap presents a very different spatial distribution of pricing from the short-term market, with the highest monthly rates concentrated throughout central Seattle and its urban-core neighbourhoods, as well as in the University District and the northern part of the Other Neighbourhoods group near the urban core. Visually, the map shows that high monthly rates are not limited to northern Seattle, but also appear in several clusters in southern neighbourhoods, including West Seattle and Beacon Hill.
+This heatmap presents a very different spatial distribution of pricing from the short-term market, with the highest monthly rates concentrated throughout central Seattle and its urban-core neighborhoods, as well as in the University District and the northern part of the Other Neighborhoods group near the urban core. Visually, the map shows that high monthly rates are not limited to northern Seattle, but also appear in several clusters in southern neighborhoods, including West Seattle and Beacon Hill.
 
 
 
 ## Conclusion
 
 
-Honestly, this analysis has its limitations because the dataset provides only limited information on listing-specific amenities and room details. From a regulatory perspective, however, the findings suggest that Seattle’s short-term operating license system functions relatively well, as most short-term listings appear to be legal and properly licensed, and overall pricing patterns do not seem to be strongly affected by compliance status. For long-term listings, I initially expected corporate listings to exhibit more outliers and stronger right-skewness. However, the results show that corporate listings have a more stable pricing pattern than residential listings, even though residential listings are more strongly associated with turnover rate. Overall, the analysis suggests that Seattle’s Airbnb market is highly segmented, as short-term and long-term listings follow different regulations, pricing patterns, turnover dynamics, and spatial structures.
+While this analysis is subject to data limitations regarding listing-specific amenities and unit details, the findings offer valuable regulatory and market insights. From a regulatory perspective, the findings suggest that Seattle’s short-term operating license system functions relatively well, as most short-term listings appear to be legal and properly licensed, and overall pricing patterns do not seem to be strongly affected by compliance status.
+
+In the long-term market, contrary to initial expectations that corporate listings would exhibit more outliers and stronger right-skewness, the results show that corporate operators maintain more stable pricing patterns than residential hosts, even though residential listings are more strongly associated with turnover rate. Overall, the analysis suggests that Seattle’s Airbnb market is highly segmented, as short-term and long-term listings follow different regulations, pricing patterns, turnover dynamics, and spatial structures.
