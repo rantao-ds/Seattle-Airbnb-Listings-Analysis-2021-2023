@@ -25,7 +25,7 @@ Seattle was the first city I arrived in when I came to the United States for sch
 * **Turnover & Location Patterns:** Econometric modeling reveals that turnover operates on completely different drivers across the two markets. In the short-term market, booking frequency is heavily driven by price and downtown convenience. In the long-term market, neighborhood location and price play only limited roles in turnover, which is instead driven primarily by host type, with residential listings turning over significantly faster than corporate-managed properties.
 
 
---- 
+
 
 ## Data
 The dataset **Listings** was downloaded from Kaggle: [Inside AirBnB - USA](https://www.kaggle.com/datasets/konradb/inside-airbnb-usa) (originally sourced from Inside Airbnb Seattle). It was created on July 2, 2023, and retrieved in January 2026. It is currently unavailable on Inside Airbnb due to seasonal dataset updates.
